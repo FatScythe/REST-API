@@ -5,13 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RESTFUL API</title>
-    <style>
-        h1 {
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="browser-app.js" defer></script>
 </head>
 <body>
-    <h1>Restful API</h1>
+    <nav>
+        <a href="index.html"><h1>Restful API</h1></a>
+        <ul>
+            <li><a href="#all">All post</a></li>
+            <li><a href="#add">Add</a></li>
+            <li><a href="#edit">Update</a></li>
+        </ul>
+    </nav>
+
+    <main  class="container">
+        <div id="all">
+            
+        </div>
+
+        <div id="add">
+            <h3>ADD A NEW POST</h3>
+            <form action="/api" method="POST">
+                <label for="title">Title</label> <br>
+                <input type="text" name="title" /> <br>
+                <label for="description">Description</label> <br>
+                <textarea name="description" id="desc" cols="30" rows="10"></textarea><br>
+                <button type="submit">ADD</button>
+            </form>
+        </div>
+
+        <div id="edit">
+            <h3>EDIT POST</h3>
+            <form>
+                <label for="id">ID</label> <br>
+                <input type="text" name="id" id="editID"/> <br>
+                <label for="title">Title</label> <br>
+                <input type="text" name="title" id="title" /> <br>
+                <label for="description">Description</label> <br>
+                <textarea name="description" id="desc" cols="30" rows="10"></textarea><br>
+                <button type="submit">EDIT</button>
+            </form>
+        </div>
+    </main>
+    
+    
 </body>
 </html>

@@ -1,0 +1,184 @@
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap');
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        background-color: #f1f1f1;
+        font-family: "Rubik", sans-serif;
+        scroll-behavior: smooth;
+        position: relative;
+        padding-bottom: 2rem;
+    }
+
+    .container {
+        width: clamp(300px, 85%, 1600px);
+        margin: 0 auto;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(29, 44, 215);
+        color: #f1f1f1;
+        padding: 1rem 2rem;
+    }
+
+    nav h1 {
+        font-size: 2rem;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav ul li {
+        list-style: none;
+        margin-left: 1rem;
+        font-size: 1.2rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: #f1f1f1;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: fff;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    main {
+        padding-top: 4.5rem;
+    }
+
+    main #all .post div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: .5rem;
+    }
+
+    main #all .post {
+        background-color: rgb(29, 44, 215, 0.7);
+        padding: 1rem;
+        color: #f1f1f1;
+        margin: 1rem 0;
+    }
+
+    main #all .post .title {
+        font-size: 2rem;
+        color: beige;
+    }
+
+    main #all .post code {
+        background-color: rgb(48, 44, 44);
+        padding: .5rem 1rem;
+        border-radius: 8px;
+    }
+
+    main #all .post p {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    main #all .post p .fn-btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        gap: 1rem;
+    }
+
+    main #all .post p .fn-btn button {
+        width: 100%;
+        background: transparent;
+        border: 0;
+    }
+
+    main #all .post p .fn-btn .edit-btn {
+        background-color: rgb(82, 85, 229);
+        padding: .4rem;
+        border-radius: 50%;
+    }
+
+    main #all .post p .fn-btn .edit-btn:hover {
+        background-color: #000000;
+    }
+
+    main #all .post p .fn-btn .delete-btn {
+        background-color: rgb(223, 79, 79);
+        padding: .4rem;
+        border-radius: 50%;
+    }
+
+    main #all .post p .fn-btn .delete-btn:hover {
+        background-color: #f1f1f1;
+    }
+
+    main #all .post p .fn-btn .delete-btn:hover svg path{
+        stroke: red;
+    }
+
+    main #all .post p svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: .5rem;
+        margin-top: .5rem;
+    }
+
+    input, textarea {
+        width: 100%;
+        font-size: 1.3rem;
+        resize: none;
+    }
+
+    input {
+        padding: 1rem;
+        margin-bottom: .5rem;
+    }
+
+    main #add h3,
+    main #edit h3 {
+        display: block;
+        margin-top: 3rem;
+    }
+
+    main #add button,
+    main #edit button {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        width: 100%;
+        padding: 1rem 0;
+        background-color: #000000;
+        color: white;
+        font-family: "Rubik", sans-serif;
+    }
+
+    main #edit button {
+        border: transparent;
+        color: #000000;
+        background-color: aquamarine;
+    }

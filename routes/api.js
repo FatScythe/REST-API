@@ -6,7 +6,7 @@ const Post = require("../model/Posts");
 router.get("/", async (req, res) => {
   try {
     const posts = await Post.find();
-    res.json(posts);
+    res.json({ success: true, posts });
   } catch (err) {
     res.json({ success: false, messsage: err });
   }
@@ -21,7 +21,8 @@ router.post("/", async (req, res) => {
   });
   try {
     const savedPost = await post.save();
-    res.json({ success: true, data: savedPost });
+    // res.json({ success: true, data: savedPost });
+    res.send("Post as been added sucessfully");
   } catch (err) {
     res.json({ success: false, messsage: err });
   }
@@ -47,7 +48,7 @@ router.get("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const removedPost = await Post.remove({ _id: id });
+    const task = await Post.findOneAndDelete({ _id: id });
     res.json({ success: true, messsage: `deleted post with the id: ${id}` });
   } catch (err) {
     res.json({ success: false, messsage: err });
