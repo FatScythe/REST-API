@@ -75,6 +75,14 @@
         margin-bottom: .5rem;
     }
 
+    main #all .empty {
+        text-align: center;
+        font-weight: bold;
+        font-size: 2rem;
+        padding-top: 1rem;
+        color:rgb(223, 79, 79);
+    }
+
     main #all .post {
         background-color: rgb(29, 44, 215, 0.7);
         padding: 1rem;

@@ -8,8 +8,14 @@ const FetchAllPost = async () => {
   try {
     const response = await fetch(`http://localhost:5000/api`);
     const { posts } = await response.json();
-    posts.map((post) => {
-      allPost.innerHTML += `<div class="post">
+    if (posts.length < 1) {
+      allPost.innerHTML = '<h5 class="empty">No tasks in your list</h5>';
+      return;
+    }
+
+    const allDOM = posts
+      .map((post) => {
+        return `<div class="post">
                       <div>
                           <div class="title">${post.title}</div>
                           <code class="id">${post._id}</code>
@@ -36,7 +42,10 @@ const FetchAllPost = async () => {
                     
                 </p>
                   </div>`;
-    });
+      })
+      .join("");
+
+    allPost.innerHTML = allDOM;
   } catch (err) {
     console.log(err);
   }
@@ -50,7 +59,7 @@ const handleDeletePost = async (id) => {
       method: "DELETE",
     });
 
-    location.reload();
+    FetchAllPost();
     console.log("deleted sucessfully");
   } catch (error) {
     console.log(error);
@@ -101,7 +110,7 @@ editPost.addEventListener("submit", async (e) => {
         description: editDescInput.value,
       }),
     });
-    location.reload();
+    FetchAllPost();
     console.log("updated sucessfully");
   } catch (err) {
     console.log(err);
